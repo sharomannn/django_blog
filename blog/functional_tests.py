@@ -1,5 +1,6 @@
 from selenium import webdriver
 import unittest
+from selenium.webdriver.common.by import By
 
 
 class BasicInstallTest(unittest.TestCase):
@@ -11,13 +12,30 @@ class BasicInstallTest(unittest.TestCase):
     def tearDown(self):
         self.browser.quit()
 
-    def test_install(self):
+    def test_home_page_title(self):
+        # В заголовке сайта вася прочитал Шарипов Роман
         """Проверка тайтла на главной странице"""
         self.browser.get('http://127.0.0.1:8000/')
-        self.assertIn('Установка прошла успешно! Поздравляем!',
+        self.assertIn('Шарипов Роман',
                       self.browser.title)
-        # self.fail('Finish the test!')
+
+    def test_home_page_header(self):
+        # В хедере сайта вася прочитал Шарипов Роман
+        """Проверка хедера на главной странице"""
+        self.browser.get('http://127.0.0.1:8000/')
+        header = self.browser.find_element(By.TAG_NAME, 'h1')
+        self.assertIn('Шарипов Роман',
+                      header.text)
 
 
 if __name__ == '__main__':
     unittest.main()
+
+# Жил был вася
+# Вася учит программирование и хочет изучить django
+# Вася открыл сайт
+
+# В заголовке сайта вася прочитал Шарипов Роман
+# Под шапкой расположен блок со статьями
+
+# У каждой статьи есть заголовок и один абзац с текстом
