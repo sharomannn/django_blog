@@ -3,6 +3,7 @@ import unittest
 from selenium.webdriver.common.by import By
 
 
+
 class BasicInstallTest(unittest.TestCase):
 
     def setUp(self):
@@ -35,7 +36,6 @@ class BasicInstallTest(unittest.TestCase):
         self.assertTrue(article_list)
 
     def test_home_page_blog_articles(self):
-        # Под шапкой расположен блок со статьями
         """Проверка наличия контента в блоге"""
         self.browser.get('http://127.0.0.1:8000/')
         article_title = self.browser.find_element_by_class_name('article-title')
