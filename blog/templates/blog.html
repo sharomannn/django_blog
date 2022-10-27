@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% block content %}
+            <!-- Blog Post (Right Sidebar) Start -->
+            <div class="col-md-9">
+                <div class="col-md-12 page-body">
+                    <div class="row">
+
+
+                        <div class="sub-title">
+                            <h2>Мыслишки подъехали</h2>
+                            <a href="contact.html"><i class="icon-envelope"></i></a>
+                        </div>
+
+                        <div class="collapse">
+                            <ul class="menu-link">
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="work.html">Work</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+<!--                        <div class="post-title">-->
+<!--                        &lt;!&ndash; Стандартная кнопка &ndash;&gt;-->
+<!--                        <button type="button" class="btn btn-default">Default-->
+<!--                        </button>-->
+<!--                        &lt;!&ndash; Обеспечивает дополнительную визуальный вес и идентифицирует основное действие в набор кнопок &ndash;&gt;-->
+<!--                        <button type="button" class="btn btn-primary">Primary-->
+<!--                        </button>-->
+
+<!--                        &lt;!&ndash; Указывает на успешное или позитивные действия &ndash;&gt;-->
+<!--                        <button type="button" class="btn btn-success">Success-->
+<!--                        </button>-->
+
+<!--                        &lt;!&ndash; Контекстуальные кнопка для информационных сообщений о сигналах тревоги &ndash;&gt;-->
+<!--                        <button type="button" class="btn btn-info">Info</button>-->
+
+<!--                        &lt;!&ndash; Указывает, что следует проявлять осторожность с этим действием &ndash;&gt;-->
+<!--                        <button type="button" class="btn btn-warning">Warning-->
+<!--                        </button>-->
+
+<!--                        &lt;!&ndash; Указывает на опасное или потенциально негативное действие &ndash;&gt;-->
+<!--                        <button type="button" class="btn btn-danger">Danger-->
+<!--                        </button>-->
+
+<!--                        &lt;!&ndash; Преуменьшить роль кнопки, сделав его похожим на ссылку, сохраняя поведение кнопки &ndash;&gt;-->
+<!--                        <button type="button" class="btn btn-link">Link</button>-->
+<!--                        </div>-->
+
+                        <div class="col-md-12 content-page">
+
+
+                            <!-- Blog Post Start -->
+                            {% for post in article_list %}
+                            <div class="col-md-12 blog-post">
+                                <div class="post-title">
+                                    <a href="single.html"><h1>{{post.title}}</h1></a>
+                                </div>
+                                <div class="post-info">
+                                    <span> {{post.created}}  |  <a href="#"
+                                                              target="_blank">{{post.categery}}</a></span>
+                                </div>
+                                <p>{{post.summary}}</p>
+                                <a href="single.html"
+                                   class="button button-style button-anim fa fa-long-arrow-right"><span>Читать статью</span></a>
+                            </div>
+                            <!-- Blog Post End -->
+                            {% endfor %}
+
+                            <div class="col-md-12 text-center">
+                                <a href="javascript:void(0)" id="load-more-post"
+                                   class="load-more-button">Load</a>
+                                <div id="post-end-message"></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Subscribe Form Start -->
+                    <div class="col-md-8 col-md-offset-2">
+                        <form id="mc-form" method="post"
+                              action="http://uipasta.us14.list-manage.com/subscribe/post?u=854825d502cdc101233c08a21&amp;id=86e84d44b7">
+
+                            <div class="subscribe-form margin-top-20">
+                                <input id="mc-email" type="email"
+                                       placeholder="Email Address"
+                                       class="text-input">
+                                <button class="submit-btn" type="submit">
+                                    Submit
+                                </button>
+                            </div>
+                            <p>Subscribe to my weekly newsletter</p>
+                            <label for="mc-email" class="mc-label"></label>
+                        </form>
+
+                    </div>
+                    <!-- Subscribe Form End -->
+
+                </div>
+
+
+                <!-- Footer Start -->
+                <div class="col-md-12 page-body margin-top-50 footer">
+                    <footer>
+                        <ul class="menu-link">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="work.html">Work</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+
+                        <p>© Copyright 2016 DevBlog. All rights reserved</p>
+
+
+                        <!-- UiPasta Credit Start -->
+                        <div class="uipasta-credit">Design By <a
+                                href="http://www.uipasta.com" target="_blank">UiPasta</a>
+                        </div>
+                        <!-- UiPasta Credit End -->
+
+
+                    </footer>
+                </div>
+                <!-- Footer End -->
+
+
+            </div>
+            <!-- Blog Post (Right Sidebar) End -->
+{% endblock content %}

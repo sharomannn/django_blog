@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Categery(models.Model):
-    objects = None
+    # objects = None
     name = models.CharField(max_length=255)
 
     def __str__(self):
